@@ -1,32 +1,83 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Sample of Web Audio API And WebGL</title>
-        <style>
-            html {
-                height: 100%;
-            }
-            body {
-                height: 100%;
-                margin: 0;
-                overflow: hidden;
-                background-color: black;
-                color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            div {
-                font-size: 64px;
-                font-style: italic;
-                text-decoration: underline;
-                padding: 48px 96px;
-                border: 2px solid white;
-            }
-        </style>
-    </head>
-    <body>
-        <script src="index.js" defer></script>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>Sample of Web Audio API And WebGL</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('pbp006_martonpinter_light.png');
+            background-size: cover;
+            font-family: Calibri;
+            font-size: 15px;
+            font-weight: bolder;
+            color: whitesmoke;
+        }
+
+        div {
+            margin: 90px;
+            border: 2px solid white;
+            font-size:60px;
+            padding:20px;
+            background-color:black;
+        }
+
+        iframe{
+            margin: 90px;
+
+        }
+
+        p{
+            font-size:25px;
+            color:ghostwhite;
+            max-width:400px;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0px;
+            padding:20px;
+            width: 100%;
+            height: 130px;
+        }
+
+
+        .grid-containe, a {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script src="index.js" defer></script>
+    <iframe height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/11797238&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+
+    <footer class="grid-container">
+        <p>
+            Monologue.cc is work in progress. Soon a live performance toolbox available online and open source. 
+            <br />
+            All artwork belong to &copy; Private Business.
+        </p>
+
+        <a href="https://soundcloud.com/private-business-1">
+            <img width="10%" src="privatebusiness_logo_01v1_rgb.jpg" />
+        </a>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="S568HYS6XRG2N" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_HU/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </footer>
+</body>
 </html>

@@ -1,7 +1,7 @@
 const renderLineVertex = `#version 300 es
 
 precision highp float;
-
+    
 layout (location = 0) in float i_value;
 
 uniform float u_length;
@@ -67,9 +67,8 @@ function createVbo(gl, array, usage) {
   gl.bindBuffer(gl.ARRAY_BUFFER, null);
   return vbo;
 }
-
-const clickElem = document.createElement('div');
-clickElem.textContent = 'Click to Start';
+const clickElem = document.createElement("div");
+clickElem.textContent = 'Click';
 document.body.appendChild(clickElem);
 
 let clicked = false;
@@ -84,7 +83,8 @@ addEventListener('click', async () => {
   const analyzer = audioCtx.createAnalyser();
   input.connect(analyzer);
 
-  const canvas = document.createElement('canvas');
+    const canvas = document.createElement('canvas');
+    
   canvas.width = innerWidth;
   canvas.height = innerHeight;
   document.body.appendChild(canvas);
@@ -115,7 +115,7 @@ addEventListener('click', async () => {
     gl.uniform1f(uniformLocs.get('u_length'), timeDomainArray.length);
     gl.uniform1f(uniformLocs.get('u_minValue'), -1.0);
     gl.uniform1f(uniformLocs.get('u_maxValue'), 1.0);
-    gl.uniform3f(uniformLocs.get('u_color'), 1.0, 0.0, 0.0);
+    gl.uniform3f(uniformLocs.get('u_color'), 1.0, 1.0, 1.0);
     gl.bindBuffer(gl.ARRAY_BUFFER, timeDomainVbo);
     gl.enableVertexAttribArray(0);
     gl.vertexAttribPointer(0, 1, gl.FLOAT, false, 0, 0);
@@ -128,7 +128,7 @@ addEventListener('click', async () => {
     gl.uniform1f(uniformLocs.get('u_length'), frequencyArray.length);
     gl.uniform1f(uniformLocs.get('u_minValue'), analyzer.minDecibels);
     gl.uniform1f(uniformLocs.get('u_maxValue'), analyzer.maxDecibels);
-    gl.uniform3f(uniformLocs.get('u_color'), 0.0, 0.0, 1.0);
+    gl.uniform3f(uniformLocs.get('u_color'), 1.0, 1.0, 1.0);
     gl.bindBuffer(gl.ARRAY_BUFFER, frequencyVbo);
     gl.enableVertexAttribArray(0);
     gl.vertexAttribPointer(0, 1, gl.FLOAT, false, 0, 0);
